@@ -19,7 +19,6 @@ use GuzzleHttp\Client as GuzzleHttpClient;
  * @method \CheckPoint\ManagementApi\Api\SessionManagement sessionManagement()
  * @method \CheckPoint\ManagementApi\Api\SmartTasks smartTasks()
  */
-
 class Client
 {
     const CLIENT_VERSION = '1.0.0';
@@ -46,15 +45,15 @@ class Client
         $this->managementPort = $managementPort;
 
         $this->httpClient = new GuzzleHttpClient([
-            'base_uri' => $this->buildApiUri(),
-            'verify' => false,
-            'http_errors' => false
+            'base_uri'    => $this->buildApiUri(),
+            'verify'      => false,
+            'http_errors' => false,
         ]);
     }
 
     private function buildApiUri()
     {
-        if (!$this->managementPort) {
+        if (! $this->managementPort) {
             $this->apiUrl = sprintf(self::BASE_URI_NO_PORT, $this->managementHost, self::API_VERSION);
         } else {
             $this->apiUrl = sprintf(self::BASE_URI, $this->managementHost, $this->managementPort, self::API_VERSION);
@@ -63,22 +62,25 @@ class Client
         return $this->apiUrl;
     }
 
-    public function getHttpClient() {
+    public function getHttpClient()
+    {
         return $this->httpClient;
     }
 
-    public function getSessionToken() {
+    public function getSessionToken()
+    {
         return $this->sessionToken;
     }
 
-    public function setSessionToken($sessionToken) {
+    public function setSessionToken($sessionToken)
+    {
         $this->sessionToken = $sessionToken;
     }
 
     public function __call($method, $arguments)
     {
         $pascalCaseMethod = ucfirst($method);
-        $classPath = "CheckPoint\ManagementApi\Api\\{$pascalCaseMethod}";
+        $classPath        = "CheckPoint\ManagementApi\Api\\{$pascalCaseMethod}";
 
         if (class_exists($classPath)) {
             return new $classPath($this);

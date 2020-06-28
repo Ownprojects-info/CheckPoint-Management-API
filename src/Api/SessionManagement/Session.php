@@ -12,7 +12,7 @@ class Session extends Api
     public function showSession(array $givenParameters)
     {
         $allowedParameters = [
-            'uid'
+            'uid',
         ];
 
         Validator::checkParameters($givenParameters, $allowedParameters);

@@ -27,7 +27,7 @@ abstract class Api
         $sessionToken = $this->client->getSessionToken();
         if ($sessionToken) {
             $options['headers'] = [
-                'X-chkp-sid' => $sessionToken
+                'X-chkp-sid' => $sessionToken,
             ];
         }
 
@@ -40,10 +40,12 @@ abstract class Api
         }
 
         $jsonContent = json_decode($resonseBody);
+
         return ($jsonContent) ? $jsonContent : $resonseBody;
     }
 
-    public function setSessionToken($sessionToken) {
+    public function setSessionToken($sessionToken)
+    {
         $this->client->setSessionToken($sessionToken);
     }
 }

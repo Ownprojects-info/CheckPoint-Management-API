@@ -1,0 +1,23 @@
+{
+    "name": "ownprojects-info/check-point-management-api",
+    "description": "PHP library for the Check Point Management API",
+    "type": "library",
+    "require": {
+        "php" : ">=7.2",
+        "guzzlehttp/guzzle": "^6.5",
+        "nesbot/carbon": "^2.35"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arthur",
+            "email": "admin@ownprojects.info",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CheckPoint\\ManagementApi\\": "src"
+        }
+    }
+}

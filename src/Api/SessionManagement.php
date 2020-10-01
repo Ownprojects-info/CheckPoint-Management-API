@@ -12,7 +12,6 @@ use CheckPoint\ManagementApi\Tools\Validator;
  * Class SessionManagement
  *
  * @method \CheckPoint\ManagementApi\Api\SessionManagement\Session session()
- * @method \CheckPoint\ManagementApi\Api\SessionManagement\LoginMessage loginMessage()
  */
 class SessionManagement extends Api
 {

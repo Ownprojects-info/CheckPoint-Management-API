@@ -73,6 +73,28 @@ class Misc extends Api
         return $this->request('show-objects', $givenParameters);
     }
 
+    /**
+     * Get the details of an object
+     *
+     * @param array $givenParameters
+     *
+     * @return mixed|\Psr\Http\Message\StreamInterface
+     * @throws CheckPointManagementApiException
+     * @link https://sc1.checkpoint.com/documents/latest/APIs/index.html#web/show-object~v1.6%20
+     *
+     */
+    public function showObject(array $givenParameters)
+    {
+        $allowedParameters = [
+            'uid',
+            'details-level',
+        ];
+
+        Validator::checkParameters($givenParameters, $allowedParameters);
+
+        return $this->request('show-object', $givenParameters);
+    }
+
     public function __call($method, $arguments)
     {
         $pascalCaseMethod = ucfirst($method);

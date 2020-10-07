@@ -95,6 +95,32 @@ class Misc extends Api
         return $this->request('show-object', $givenParameters);
     }
 
+    /**
+     * Get ta list of an objects
+     *
+     * @param array $givenParameters
+     *
+     * @return mixed|\Psr\Http\Message\StreamInterface
+     * @throws CheckPointManagementApiException
+     * @link https://sc1.checkpoint.com/documents/latest/APIs/index.html#web/show-unused-objects~v1.6%20
+     *
+     */
+    public function showUnusedPbjects(array $givenParameters)
+    {
+        $allowedParameters = [
+            'limit',
+            'offset',
+            'order',
+            'dereference-group-members',
+            'show-membership',
+            'details-level',
+        ];
+
+        Validator::checkParameters($givenParameters, $allowedParameters);
+
+        return $this->request('show-unused-objects', $givenParameters);
+    }
+
     public function __call($method, $arguments)
     {
         $pascalCaseMethod = ucfirst($method);

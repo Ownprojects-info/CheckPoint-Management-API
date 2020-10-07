@@ -105,7 +105,7 @@ class Misc extends Api
      * @link https://sc1.checkpoint.com/documents/latest/APIs/index.html#web/show-unused-objects~v1.6%20
      *
      */
-    public function showUnusedPbjects(array $givenParameters)
+    public function showUnusedObjects(array $givenParameters)
     {
         $allowedParameters = [
             'limit',

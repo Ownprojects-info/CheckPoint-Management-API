@@ -15,6 +15,8 @@ use CheckPoint\ManagementApi\Tools\Validator;
  */
 class Misc extends Api
 {
+
+
     /**
      * Get a list of changes between dates or sessions
      *
@@ -120,6 +122,7 @@ class Misc extends Api
 
         return $this->request('show-unused-objects', $givenParameters);
     }
+
 
     public function __call($method, $arguments)
     {

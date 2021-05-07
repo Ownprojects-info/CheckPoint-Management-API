@@ -1,5 +1,5 @@
 {
-    "name": "ownprojects-info/check-point-management-api",
+    "name": "martinmulder/check-point-management-api",
     "description": "PHP library for the Check Point Management API",
     "type": "library",
     "require": {
@@ -9,8 +9,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Arthur",
-            "email": "admin@ownprojects.info",
+            "name": "Martin Mulder",
+            "email": "martin@serioussecurity.nl",
             "role": "Developer"
         }
     ],

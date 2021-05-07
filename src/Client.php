@@ -25,7 +25,7 @@ class Client
 
     const API_VERSION = 'v1.6';
 
-    const BASE_URI = 'https:///%s:%s/web_api/%s/';
+    const BASE_URI = 'https://%s:%s/web_api/%s/';
 
     const BASE_URI_NO_PORT = 'https://%s/web_api/%s/';
 

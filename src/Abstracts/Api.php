@@ -20,7 +20,7 @@ abstract class Api
     {
         $options = [];
 
-        if (is_array($parameters)) {
+        if (is_array($parameters) && !empty($parameters)) {
             $options['json'] = $parameters;
         }
 
@@ -30,6 +30,12 @@ abstract class Api
                 'X-chkp-sid' => $sessionToken,
             ];
         }
+
+	// Send an ampty json body if no parameters are given
+	if (empty($parameters)) {
+	    $options['headers']['Content-Type'] = "application/json";
+	    $options['body'] = "{}";
+	}
 
         $response = $this->client->getHttpClient()->post($uri, $options);
 
